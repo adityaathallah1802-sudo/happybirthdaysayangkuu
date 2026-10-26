@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>for my beloved girl 🤍</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  padding: 25px 0;
+  background: radial-gradient(
+    ellipse at center,
+    #292538 0%,
+    #111018 55%,
+    #050508 100%
+  );
+  color: white;
+  font-family: Georgia, serif;
+  overflow-x: hidden;
+}
+
+#stars, #hearts {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+#stars { z-index: 0; }
+#hearts { z-index: 3; }
+
+.star {
+  position: absolute;
+  color: white;
+  animation: twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle {
+  from { opacity: .15; transform: scale(.7); }
+  to { opacity: 1; transform: scale(1.3); }
+}
+
+.heart {
+  position: absolute;
+  bottom: -40px;
+  color: white;
+  opacity: 0;
+  animation: floatUp linear forwards;
+  text-shadow: 0 0 12px white, 0 0 30px #d9c7ff;
+}
+
+@keyframes floatUp {
+  10% { opacity: .8; }
+  100% {
+    transform: translateY(-115vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.container {
+  position: relative;
+  z-index: 2;
+  width: min(92%, 460px);
+  margin: auto;
+  text-align: center;
+  padding: 30px 20px;
+  border: 1px solid #ffffff25;
+  border-radius: 25px;
+  background: #ffffff08;
+  box-shadow: 0 0 60px #c7b6ff12;
+  backdrop-filter: blur(10px);
+  animation: appear 1.5s ease both;
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.small {
+  letter-spacing: 4px;
+  font-size: 10px;
+  color: #d8d0e9;
+  margin-bottom: 15px;
+}
+
+.big-heart {
+  font-size: 65px;
+  filter: drop-shadow(0 0 18px white);
+  animation: beat 1.5s infinite;
+  display: inline-block;
+}
+
+@keyframes beat {
+  0%, 100% { transform: scale(1); }
+  15% { transform: scale(1.15); }
+  30% { transform: scale(1); }
+  45% { transform: scale(1.1); }
+}
+
+/* PEMUTAR MUSIK */
+.music-player {
+  margin: 18px auto 24px;
+  padding: 12px;
+  width: 100%;
+  max-width: 310px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #ffffff35;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #ffffff12, #c9b8ff12);
+}
+
+.music-icon {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #ffffff18;
+  font-size: 22px;
+}
+
+.music-info {
+  flex: 1;
+  min-width: 0;
+  text-align: left;
+  font-family: Arial, sans-serif;
+}
+
+.music-title {
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+.music-subtitle {
+  font-size: 10px;
+  color: #c6bdd8;
+}
+
+.music-button {
+  margin: 0;
+  padding: 9px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+
+.music-player.playing .music-icon {
+  animation: musicPulse 1s infinite alternate;
+}
+
+@keyframes musicPulse {
+  to {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #d9c7ff90;
+  }
+}
+
+/* FOTO UTAMA */
+.photo-frame {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  margin: 18px auto 22px;
+  padding: 6px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, white, #c9b8ff, white, #b9a5e8);
+  box-shadow: 0 0 25px #ffffff40, 0 0 45px #c9b8ff40;
+  animation: photoGlow 3s infinite alternate;
+}
+
+.photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #171321;
+  display: block;
+}
+
+@keyframes photoGlow {
+  to {
+    box-shadow: 0 0 25px #ffffff90, 0 0 45px #c9b8ff70;
+  }
+}
+
+.photo-heart {
+  position: absolute;
+  right: -10px;
+  bottom: 5px;
+  color: white;
+  font-size: 35px;
+  text-shadow: 0 0 15px white;
+  animation: beat 1.5s infinite;
+}
+
+/* TULISAN */
+h1 {
+  font-size: clamp(30px, 7vw, 38px);
+  font-weight: normal;
+  margin: 12px 0;
+  text-shadow: 0 0 20px #e6dcff60;
+}
+
+.name {
+  font-size: clamp(23px, 6vw, 31px);
+  font-style: italic;
+  color: #eee7ff;
+  margin-bottom: 20px;
+}
+
+.line {
+  width: 70px;
+  height: 1px;
+  background: white;
+  opacity: .6;
+  margin: 20px auto;
+}
+
+.message {
+  color: #d8d3e2;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+button {
+  margin-top: 22px;
+  padding: 12px 24px;
+  border: 1px solid #ffffff70;
+  border-radius: 30px;
+  background: #ffffff10;
+  color: white;
+  font-size: 13px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: .3s;
+}
+
+button:hover {
+  background: white;
+  color: #171321;
+  box-shadow: 0 0 25px #ffffff70;
+}
+
+/* PESAN ULANG TAHUN */
+.hidden-message {
+  display: none;
+  margin-top: 22px;
+  color: #f4edff;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.9;
+  animation: appear 1s ease both;
+}
+
+/* GALERI FOTO BERUNTUN */
+.gallery {
+  display: none;
+  margin-top: 32px;
+  animation: appear 1.2s ease both;
+}
+
+.gallery-heading {
+  font-size: 23px;
+  font-weight: normal;
+  margin-bottom: 8px;
+  color: #f2eaff;
+}
+
+.gallery-subtitle {
+  color: #c6bdd8;
+  font: 12px/1.8 Arial, sans-serif;
+  margin-bottom: 22px;
+}
+
+.gallery-list {
+  display: grid;
+  gap: 22px;
+}
+
+.gallery-card {
+  padding: 10px;
+  border: 1px solid #ffffff30;
+  border-radius: 18px;
+  background: linear-gradient(145deg, #ffffff12, #ffffff04);
+  box-shadow: 0 8px 30px #00000025;
+  animation: appear 1s ease both;
+}
+
+.gallery-card img {
+  display: block;
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid #ffffff20;
+  transition: transform .4s, filter .4s;
+}
+
+.gallery-card img:hover {
+  transform: scale(1.015);
+  filter: brightness(1.08);
+}
+
+.photo-caption {
+  padding: 13px 5px 7px;
+  font: 13px/1.7 Arial, sans-serif;
+  color: #e4dced;
+}
+
+.gallery-heart {
+  color: #e9ddff;
+  font-size: 19px;
+}
+
+.signature {
+  margin-top: 28px;
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: #c6bdd8;
+}
+
+@media (max-width: 400px) {
+  .container { padding: 25px 15px; }
+  .photo-frame { width: 150px; height: 150px; }
+  .big-heart { font-size: 55px; }
+  .gallery-card img { height: 220px; }
+}
+</style>
+</head>
+
+<body>
+
+<div id="stars"></div>
+<div id="hearts"></div>
+
+<main class="container">
+
+  <p class="small">A LITTLE MESSAGE FOR YOU</p>
+
+  <div class="big-heart">🤍</div>
+
+  <!-- MUSIK -->
+  <div class="music-player" id="musicPlayer">
+    <div class="music-icon">♫</div>
+
+    <div class="music-info">
+      <div class="music-title">A song for you 🤍</div>
+      <div class="music-subtitle" id="musicStatus">
+        Lagu spesial untuk Azizah
+      </div>
+    </div>
+
+    <button class="music-button" id="musicButton"
+      onclick="toggleMusic()">▶ Putar</button>
+  </div>
+
+  <audio id="romanticMusic" src="musik0.mp3" loop></audio>
+
+  <!-- FOTO UTAMA -->
+  <div class="photo-frame">
+    <img src="azizah.jpg.jpeg" alt="Foto Azizah Ishmatin">
+    <span class="photo-heart">♡</span>
+  </div>
+
+  <h1>Hai.. sayangkuuu</h1>
+  <div class="name">Azizah Ishmatin</div>
+
+  <div class="line"></div>
+
+  <p class="message">
+   ✨ Selamat ulang tahun yang ke-17 sayanggg ✨<br>
+    Hari istimewa untuk seseorang<br>
+   🤍 yang begitu berharga 🤍
+  </p>
+
+  <button id="messageButton" onclick="openMessage()">
+  🤍 special for you 🤍
+  </button>
+
+  <!-- PESAN DAN GALERI -->
+  <div class="hidden-message" id="message">
+
+    Happy sweet seventeen, SAYANGGKUUU! 🤍
+    <br><br>
+
+    selamat ulang tahun yaa, sayanggg. hari ini hari spesial buat kamu, hari di mana perempuan yang aku sayang bertambah usia. aku berharap di umur kamu yang sekarang, kamu selalu dikasih kesehatan, kebahagiaan, dilancarkan semua urusannya, dimudahkan semua impiannya, dan semoga apa pun yang lagi kamu perjuangin bisa tercapai satu per satu. aku pengen kamu selalu bahagia, selalu bisa senyum, dan jangan pernah ngerasa sendirian yaa, sayang. 🥹❤️
+    <br><br>
+
+    sayang, di hari spesial kamu ini, aku juga mau minta maaf buat semua kesalahan aku selama ini. maaf yaa kalau aku sering bikin kamu kecewa, bikin kamu sedih, bikin kamu kepikiran gara-gara sikap aku, atau bahkan bikin kamu nangis karena ulah aku sendiri. maaf kalau selama ini aku belum bisa jadi cowok yang kamu harapin, maaf kalau aku masih sering egois, masih suka bikin kesalahan, dan terkadang belum bisa ngerti perasaan kamu dengan baik.
+    <br><br>
+
+    aku sadar aku bukan cowok yang sempurna, aku masih banyak kurangnya, dan mungkin tanpa aku sadari ada sikap atau kata-kata aku yang nyakitin hati kamu. aku bener-bener minta maaf yaa, sayang. aku nggak mau cuma bilang maaf terus ngulangin kesalahan yang sama lagi. aku pengen belajar buat jadi lebih baik, lebih ngerti kamu, lebih bisa jaga perasaan kamu, dan lebih menghargai kamu. aku tahu berubah itu nggak cukup cuma lewat kata-kata, makanya aku pengen buktiin pelan-pelan lewat sikap aku ke depannya.
+    <br><br>
+
+    makasih yaa, sayang, udah hadir di hidup aku. makasih udah jadi bagian dari hari-hari aku, udah kasih aku banyak cerita, banyak kenangan, dan banyak hal yang bikin aku belajar tentang arti menyayangi seseorang. aku mungkin nggak selalu bisa bikin kamu bahagia setiap waktu, tapi percayalah, aku juga pengen jadi salah satu alasan kamu buat tersenyum setiap hari. ❤️
+    <br><br>
+
+    aku nggak bisa janji kalau hubungan kita bakal selalu baik-baik aja tanpa masalah, tapi aku berharap kalau nanti ada masalah, kita bisa belajar buat saling ngerti, saling dengerin, dan saling memperbaiki diri. aku nggak mau kamu harus terus-terusan ngerasa sakit karena kesalahan aku. aku pengen kita sama-sama tumbuh jadi lebih dewasa dan bisa saling menghargai.
+    <br><br>
+
+    aku nggak bisa janji kalau hubungan kita bakal selalu baik-baik aja tanpa masalah, tapi aku berharap kalau nanti ada masalah, kita bisa belajar buat saling ngerti, saling dengerin, dan saling memperbaiki diri. aku nggak mau kamu harus terus-terusan ngerasa sakit karena kesalahan aku. aku pengen kita sama-sama tumbuh jadi lebih dewasa dan bisa saling menghargai.
+    <br><br>
+
+    sekali lagi, happy birthday yaa, perempuan kesayangan aku. 🫶🏻💗 semoga semua doa baik yang kamu panjatkan bisa segera jadi kenyataan. semoga kamu selalu dikelilingi orang-orang baik, selalu punya alasan buat bahagia, dan nggak pernah kehilangan semangat buat ngejar semua yang kamu impikan.
+    <br><br>
+
+
+    maaf yaa kalau aku masih banyak kurangnya, maaf kalau aku belum bisa jadi yang terbaik buat kamu. aku masih belajar, masih berproses, dan masih punya banyak hal yang harus aku perbaiki dari diri aku sendiri.
+    <br><br>
+
+    aku sayang kamu, sayanggg. makasih udah jadi bagian dari hidup aku. semoga di umur kamu yang baru ini, lebih banyak bahagia yang kamu rasain daripada sedihnya. jangan lupa bahagia yaa, karena kamu juga pantas buat ngerasain banyak hal indah di hidup kamu. ❤️🥹
+    <br><br>
+
+    happy birthday, cintakuuu. semoga kamu selalu bahagia, hari ini, besok, dan seterusnya. sekali lagi, maafin aku yaa atas semua kesalahan aku selama ini. aku sayang kamu lebih dari yang bisa aku jelasin lewat kata-kata. ❤️‍🩹💐
+    <br><br>
+
+    love you, Azizah Ishmatin. Happy birthday, sayangkuuu! 🎂❤️🫶🏻
+    <br><br>
+
+
+    <strong>I love you, always. ♡</strong>
+
+    <!-- GALERI MUNCUL DI BAWAH PESAN -->
+    <section class="gallery" id="gallery">
+
+      <div class="gallery-heading">Our Little Memories ♡</div>
+
+      <p class="gallery-subtitle">
+        🤍 kenangan indah kita bersama 🤍
+      </p>
+
+      <div class="gallery-list">
+
+        <div class="gallery-card">
+          <img src="foto1.jpeg" alt="Kenangan pertama"
+            loading="lazy">
+          <p class="photo-caption">
+            <span class="gallery-heart">♡</span><br>
+            Sebuah kenangan yang indah
+          </p>
+        </div>
+
+        <div class="gallery-card">
+          <img src="foto2.jpeg" alt="Kenangan kedua"
+            loading="lazy">
+          <p class="photo-caption">
+            <span class="gallery-heart">♡</span><br>
+            Momen sederhana yang berharga
+          </p>
+        </div>
+
+        <div class="gallery-card">
+          <img src="foto3.jpeg" alt="Kenangan ketiga"
+            loading="lazy">
+          <p class="photo-caption">
+            <span class="gallery-heart">♡</span><br>
+            Senyum yang ingin selalu dikenang
+          </p>
+        </div>
+
+        <div class="gallery-card">
+          <img src="foto4.jpeg" alt="Kenangan keempat"
+            loading="lazy">
+          <p class="photo-caption">
+            <span class="gallery-heart">♡</span><br>
+            Semoga lebih banyak cerita indah
+          </p>
+        </div>
+
+        <div class="gallery-card">
+            <img src="foto5.jpeg" alt="kenangan kelima"
+                loading="lazy">
+            <p class="photo-caption">
+                <span class="gallery-heart">♡</span><br>
+                selalu bersama untuk kenangan 
+            </p>
+        </div>
+
+        <div class="gallery-card">
+            <img src="foto6.jpeg" alt="kenangan keenam"
+                loading="lazy">
+            <p class="photo-caption">
+                <span class="gallery-heart">♡</span><br>
+                bersama untuk selamanya
+            </p>
+        </div>
+
+        <div class="gallery-card">
+            <img src="foto7.jpeg" alt="kenangan ketujuh"
+                loading="lazy">
+            <p class="photo-caption">
+                <span class="gallery-heart">♡</span><br>
+                bahagia yang menyenangkan 
+            </p>
+        </div>
+
+        <div class="gallery-card">
+            <img src="foto8.jpg" alt="kenangan kedelapan"
+                loading="lazy">
+            <p class="photo-caption">
+                <span class="gallery-heart">♡</span><br>
+                kenangan lucuu
+            </p>
+        </div>
+
+      </div>
+
+      <p class="gallery-subtitle" style="margin-top:22px">
+        Happy 17th birthday, SAYANGGKUUU 🤍
+      </p>
+
+    </section>
+  </div>
+
+  <div class="signature"> ♡ 28 Oktober 2026 ♡</div>
+
+</main>
+
+<script>
+// BINTANG BERKELAP-KELIP
+const stars = document.getElementById("stars");
+
+for (let i = 0; i < 65; i++) {
+  const star = document.createElement("span");
+  star.className = "star";
+  star.textContent = "✦";
+  star.style.left = Math.random() * 100 + "%";
+  star.style.top = Math.random() * 100 + "%";
+  star.style.fontSize = (Math.random() * 9 + 4) + "px";
+  star.style.animationDelay = Math.random() * 3 + "s";
+  stars.appendChild(star);
+}
+
+// HATI MELAYANG
+const hearts = document.getElementById("hearts");
+
+function createHeart() {
+  const heart = document.createElement("span");
+  heart.className = "heart";
+  heart.textContent = Math.random() > 0.5 ? "♡" : "🤍";
+  heart.style.left = Math.random() * 100 + "%";
+  heart.style.fontSize = (Math.random() * 18 + 12) + "px";
+  heart.style.animationDuration = (Math.random() * 5 + 5) + "s";
+
+  hearts.appendChild(heart);
+  setTimeout(() => heart.remove(), 10000);
+}
+
+setInterval(createHeart, 400);
+
+// PEMUTAR MUSIK
+const music = document.getElementById("romanticMusic");
+const musicButton = document.getElementById("musicButton");
+const musicStatus = document.getElementById("musicStatus");
+const musicPlayer = document.getElementById("musicPlayer");
+
+async function toggleMusic() {
+  if (music.paused) {
+    try {
+      await music.play();
+      musicButton.textContent = "❚❚ Jeda";
+      musicStatus.textContent = "Sedang diputar untukmu ♡";
+      musicPlayer.classList.add("playing");
+    } catch (error) {
+      musicStatus.textContent = "Periksa file musik.mp3 kamu";
+    }
+  } else {
+    music.pause();
+    musicButton.textContent = "▶ Putar";
+    musicStatus.textContent = "Lagu spesial untuk Azizah";
+    musicPlayer.classList.remove("playing");
+  }
+}
+
+// PESAN DAN GALERI FOTO
+function openMessage() {
+  const message = document.getElementById("message");
+  const gallery = document.getElementById("gallery");
+  const button = document.getElementById("messageButton");
+
+  const isOpen = message.style.display === "block";
+
+  if (isOpen) {
+    message.style.display = "none";
+    gallery.style.display = "none";
+    button.textContent = "Buka pesan spesial 🤍";
+    return;
+  }
+
+  message.style.display = "block";
+  gallery.style.display = "block";
+  button.textContent = "Tutup pesan 🤍";
+
+  for (let i = 0; i < 15; i++) {
+    setTimeout(createHeart, i * 100);
+  }
+
+  // Gulir perlahan menuju galeri
+  setTimeout(() => {
+    gallery.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
+  }, 300);
+}
+</script>
+
+</body>
+</html>
